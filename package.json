@@ -1,0 +1,28 @@
+{
+  "name": "signature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Gaëtan",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^21.3.0"
+  },
+  "dependencies": {
+    "@marsaud/smb2": "^0.18.0",
+    "axios": "^1.2.2",
+    "drag-drop": "^7.2.0",
+    "electron-dl": "^3.5.0",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.1",
+    "nedb": "^1.8.0",
+    "network": "^0.6.1",
+    "smb2": "^0.2.11",
+    "smbclient": "^1.0.3",
+    "v9u-smb2": "^1.0.6"
+  }
+}

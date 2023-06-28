@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7aa822a512.js" crossorigin="anonymous"></script>
+    <title>Signature</title>
+</head>
+<body>
+    <!-- Topbar -->
+    <nav>
+        <ul>
+            <li>
+                <button id="reduceBtn">&#128469;&#xFE0E;</button>
+            </li>
+            <li>
+                <button id="sizeBtn">&#128470;</button>
+            </li>
+            <li>
+                <button id="closeBtn">&#9587;</button>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fin Topbar -->
+
+    <!-- Menu -->
+    <nav id="menu">
+        <ul id="menu_ul">
+            <li id="menu_li"><a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a></li>
+            <li id="menu_li"><a href="listeAgents.html"><i class="fa-solid fa-user"></i> Liste des agents</a></li>
+            <li id="menu_li"><a href="ajoutSignature.html"><i class="fa-sharp fa-solid fa-file-signature"></i> Ajouter une signature</a></li>
+        </ul>
+    </nav>
+    <!-- Fin Menu -->
+
+
+                <!-- page -->
+
+                    <!-- Form -->
+
+                    <div class="form">
+                        <br>
+                        <hr>
+                        <h1>Ajout d'agent</h1>
+                        <hr>
+                        <br>
+                        <input type="text" id="nomLigne" placeholder="Nom de l'Agent">
+                            <br>
+                        <input type="text" id="prenomLigne" placeholder="Prénom de l'Agent">
+                            <br>
+                        <input type="email" id="adresseLigne" placeholder="Adresse Email de l'Agent">
+                            <br>
+                        <input type="text" id="posteLigne" placeholder="Poste de l'agent">
+                            <br>
+                        <select type="text" id="serviceLigne" placeholder="Service de l'agent">
+                            <option value="">Service de l'agent</option>
+                            <option value="1">Informatique</option>
+                            <option value="2">Comptabilité</option>
+                            <option value="3">Voirie</option>
+                            <option value="4">Batiment</option>
+                        </select>
+                        <br>
+                        <input type="text" id="endroitLigne" placeholder="Lieu de travail de l'Agent">
+                            <br>
+                        <input type="tel" id="telLigne" placeholder="Numéro de téléphone fix et portable">
+                            <br>
+                        <input type="text" id="cheminLigne" placeholder="Chemin d'accès au fichier">
+                            <br>
+                        <button type="button"  id="btnSaveLigne">Enregistrer</button>
+                    </div>
+                    <!-- Fin Form -->
+
+                    <!-- Menu génération-->
+                    <div id="generation">
+                        <h3>Générer la/les signature(s)</h3>
+                        <nav id="menu-genSign">
+                            <ul id="menu-ul-gensign">
+                                <li id="menu-li-gensign"><span id="sendIfCheck"><button>Envoyer aux agents séléctionner</button></span></li>
+                                <li id="menu-li-gensign"><input id="searchBar" type="search" placeholder="Rechercher..."></li>
+                                <li id="menu-li-gensign"><select id="list" onchange="getSelectValue(displayTabTrie())">
+                                    <option value="0" onclick="displayTabTrie(getSelectValue())">Trier par service :</option>
+                                    <option value="1" onclick="displayTabTrie()">Informatique</option>
+                                    <option value="2" onclick="displayTabTrie()">Comptabilité</option>
+                                    <option value="3" onclick="displayTabTrie()">Voirie</option>
+                                    <option value="4" onclick="displayTabTrie()">Batiment</option>
+                                </select>
+                                <li id="menu-li-gensign"><button id="generateallsign" onclick="generateAllSign()">Générer toutes les signatures</button></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Fin Menu génération-->
+                    
+                    <!-- Tableau général -->
+                    <p id="titleTable" class="titleTab">Tableau Général</p>
+                    <div class="tableau">
+                        <table id="tableRegistre">
+                            <thead>
+                                <tr>
+                                    <th><i class=""></i>Envoyer une signature</th>
+                                    <th><i class=""></i>Nom</th>
+                                    <th><i class=""></i>Prénom</th>
+                                    <th><i class=""></i>Adresse Mail</th>
+                                    <th><i class=""></i>Poste</th>
+                                    <th><i class=""></i>Lieu de travail</th>
+                                    <th><i class=""></i>Numéros de téléphones</th>
+                                    <th><i class=""></i>Chemin de connexion</th>
+                                    <th><i class="fa-solid fa-trash"></i></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <section>
+                            </section>
+                        </div>
+                    <!-- Fin pagination -->
+                <!-- Fin page -->
+
+                <!-- Footer -->
+                <footer>
+                    <p><span>&copy; Copyright 2023</span> Osartis-Marquions Service-Informatique</p>
+                </footer>
+                <!-- Fin Footer -->
+
+                <!-- Script-->
+    <script src="app.js"></script>
+    <script src="generateTab.js"></script>
+    <script src="generateSign.js"></script>
+</body>
+</html>
